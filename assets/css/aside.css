@@ -1,0 +1,150 @@
+aside {
+    width: 350px;
+    background-color: #11894A;
+    height: 100vh;
+    padding: 80px 16px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 100px;
+    position: relative;
+    z-index: 9;
+}
+
+.menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    justify-content: center;
+}
+
+aside nav {
+    background: #13da73;
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    width: 100%;
+    position: absolute;
+    justify-content: space-between;
+}
+
+aside p {
+    width: 200px;
+}
+
+.bi-list {
+    font-size: 1.5rem;
+    padding: 8px;
+    transition: 0.5s;
+    border-radius: 4px;
+}
+
+.bi-list:hover {
+    background: #11894b49;
+}
+
+.menu:hover {
+    background: #13da73;
+}
+
+.menu.active {
+    background: #15aa5d;
+}
+
+aside.active {
+    width: fit-content;
+}
+
+aside.active p,
+aside.active nav b,
+aside.active .card-profile,
+aside.active .show,
+aside.active .bi-caret-down-fill {
+    display: none;
+}
+
+aside img {
+    width: 50px !important;
+    height: 50px;
+    
+}
+img[alt="profile"]{
+    object-fit: cover;
+    border-radius: 100%;
+    border: 2px solid white;
+    aspect-ratio: 1/1;
+}   
+
+hr {
+    opacity: 0.2;
+    border: none;
+    border-top: 1px solid white;
+    margin: 8px 0;
+}
+
+.card-profile {
+    display: flex;
+    flex-direction: column;
+}
+
+aside.active nav {
+    justify-content: center;
+}
+
+.profile {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    color: white;
+    gap: 16px;
+    position: relative;
+}
+
+.bi-caret-down-fill {
+    position: absolute;
+    /* top: 50%; */
+    right: 0;
+    padding: 8px;
+    font-size: 10px;
+    transition: 0.5s;
+}
+
+.show {
+    display: none;
+    /* padding-left: 40px; */
+    position: relative;
+    margin: 0 !important;
+}
+.show::before{
+    content: "";
+    height: 100%;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.411);
+    position: absolute;
+    top: 0;
+    left: 24px;
+    border-radius: 100%;
+}
+.show p{
+    width: 160px;
+
+}
+
+.show.aktif {
+    display: block;
+
+}
+
+.dropdown{
+    position: relative;
+}
+
+.rotate{
+    transform: rotate(180deg);
+}

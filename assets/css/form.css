@@ -1,0 +1,106 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-container.card {
+    /* width: 80%; */
+    border-radius: 30%;
+    text-align: center;
+    background-color: #11894A;
+    margin-bottom: 300px;
+}
+h2.lab{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+h2.judul {
+    text-align: center;
+}
+
+h2.bio{
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+label {
+    width: 30%;
+}
+
+input[type = "radio"]{
+    width: 10px;
+
+}
+.center{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+textarea{
+    width: 70%;
+    flex-direction: column;
+    border-radius: 4px;
+    border: 1px solid black;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    border-color: aqua;
+}
+input {
+    width: 70%;
+    flex-direction: column;
+    border-radius: 4px;
+    border: 1px solid black;
+    background: #ffffff;
+    height: 30px;
+    color: rgb(0, 0, 0);
+    border-color: aqua;
+    padding: 0px 8px;
+}
+
+input[disabled]{
+/* background-color: rgb(185, 176, 176); */
+border: none;
+
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input.tanggal {
+    width: 50%;
+    text-align: center;
+}
+
+.form-container.card form label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #000000;
+}
+
+input.simpan{
+    background-color: #11894A;
+    border: none;
+    color: white;
+    padding: 8px;
+    width: 610px;
+    border-radius: 4px;
+    border-color: rgb(0, 0, 0);
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input.simpan:hover {
+    background: #0000009d;
+}
+
+.row {
+    display: flex;
+}

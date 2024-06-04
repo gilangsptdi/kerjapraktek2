@@ -1,0 +1,40 @@
+main {
+    width: 100%;
+    background-color: whitesmoke;
+    height: 100vh;
+    padding: 24px;
+    padding-top: 100px;
+    position: relative;
+
+}
+
+main#home .container {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+
+}
+
+.card {
+    background: white;
+    padding: 24px;
+    height: fit-content;
+    border-radius: 4px;
+    width: 100%;
+    box-shadow: 4px 4px 8px 0px #00000018;
+}
+
+.card h4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.card .bi {
+    color: white;
+    background: #13da73;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 1.4rem;
+}
