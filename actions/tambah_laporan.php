@@ -4,7 +4,7 @@ include('../include/config.php');
 if (isset($_POST['simpan'])) {
     $kode_laporan = $_POST['kode_laporan'];
     $noreg = $_POST['noreg'];
-    $hemoglobin = $_POST['hemoglobin'];
+    $hemoglobin = $_POST['hemoglobin'] ;
     $leukosit = $_POST['leukosit'];
     $trombosit = $_POST['trombosit'];
     $eritrosit = $_POST['eritrosit'];

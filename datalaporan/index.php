@@ -111,6 +111,10 @@ if (!isset($_SESSION['kode_user'])) {
                 <i class="bi bi-person-fill-add"></i>
                 <p>Daftar Laporan</p>
             </a>
+            <a href="../laporanpasien/index.php" class="menu">
+                <i class="bi bi-person-fill-add"></i>
+                <p>Daftar Laporan Bulanan</p>
+            </a>
         </div>
         <a href="../actions/logout.php" class="menu">
             <i class="bi bi-box-arrow-left"></i>
@@ -129,6 +133,7 @@ if (!isset($_SESSION['kode_user'])) {
 
         <div class="formlap-container">
             <h2 class="lab">HASIL LAPORAN</h2>
+            
             <table id="mytable" class="display print">
                 <thead>
                     <tr>
@@ -165,6 +170,7 @@ if (!isset($_SESSION['kode_user'])) {
                             echo "<a class='hapus' href='../actions/hapus_laporan.php?kode=" . $data['kode_laporan'] . "'>Hapus</a></td>";
                             echo "</tr>";
                             $no++;
+
                         }
                     }
                     ?>

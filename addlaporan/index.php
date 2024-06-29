@@ -111,6 +111,10 @@ if (!isset($_SESSION['kode_user'])) {
         <i class="bi bi-person-fill-add"></i>
         <p>Daftar Laporan</p>
       </a>
+      <a href="../laporanpasien/index.php" class="menu">
+        <i class="bi bi-person-fill-add"></i>
+        <p>Daftar Laporan Bulanan</p>
+      </a>
     </div>
 
     <a href="../actions/logout.php" class="menu">
@@ -139,6 +143,10 @@ if (!isset($_SESSION['kode_user'])) {
             <option value="" selected disabled>-Pilih-</option>
             <?php
             include('../include/config.php');
+
+          //   $hemoglobin = !empty($_POST['hemoglobin']) ? $_POST['hemoglobin'] : null;
+          //   $leukosit = !empty($_POST['leukosit']) ? $_POST['leukosit'] : null;
+          // $trombosit = !empty($_POST['trombosit']) ? $_POST['trombosit'] : null;
             $sql = "SELECT * FROM data_pasien";
             $query = mysqli_query($conn, $sql);
 

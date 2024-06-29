@@ -107,6 +107,10 @@ if (!isset($_SESSION['kode_user'])) {
                 <i class="bi bi-person-fill-add"></i>
                 <p>Daftar Laporan</p>
             </a>
+            <a href="../laporanpasien/" class="menu">
+                <i class="bi bi-person-fill-add"></i>
+                <p>Daftar Laporan Bulanan</p>
+            </a>
         </div>
 
         <a href="../actions/logout.php" class="menu">

@@ -6,7 +6,7 @@ $query = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($query) > 0) {
     while ($data = mysqli_fetch_array($query)) {
-        $hemoglobin = $data['hemoglobin'];
+    $hemoglobin = $data['hemoglobin'];
     $leukosit = $data['leukosit'];
     $trombosit = $data['trombosit'];
     $eritrosit = $data['eritrosit'];
