@@ -306,5 +306,23 @@ if (mysqli_num_rows($query) > 0) {
             <!-- <button onclick="printPage('tes.html')">Cetak</button> -->
         </div>
         <script src="../assets/js/script.js"></script>
+        <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+    <script>
+       
+        new DataTable('#mytable');
+
+        function printPage(url) {
+            // Buka jendela baru dengan URL yang diberikan
+            var printWindow = window.open(url, '_blank');
+            // Tunggu hingga halaman sepenuhnya dimuat
+            printWindow.onload = function() {
+                // Cetak halaman dan tutup jendela setelah selesai mencetak
+                printWindow.print();
+                printWindow.onafterprint = function() {
+                    printWindow.close();
+                };
+            };
+        }
+    </script>
 </body>
 </html>
