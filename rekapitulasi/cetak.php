@@ -120,7 +120,7 @@
 
         for ($day = 1; $day <= $daysInMonth; $day++) {
             $date = DateTime::createFromFormat('Y-m-d', "$year-$month-$day");
-            $tgl = $date->format('Y-m-d');
+            $tgl = $_GET['bulan']."-".$date->format('d');
             include('../include/config.php');
             include('../actions/rekapitulasi.php');
             
@@ -133,7 +133,7 @@
             echo "<td>".$total_urin_lengkap."</td>";
             echo "<td>".$total_protein."</td>";
             echo "<td>".$total_teskehamilan."</td>";
-            echo "<td></td>";
+            echo "<td>".$total_bta."</td>";
             echo "<td></td>";
             echo "<td>".$total_antihiv."</td>";
             echo "<td>".$total_sifilistprapid."</td>";
@@ -144,13 +144,13 @@
             echo "<td>".$total_ns1dbd."</td>";
             echo "<td>".$total_igmdbd."</td>";
             echo "<td>".$total_iggdbd."</td>";
-            echo "<td>".$total_guladarah."</td>";
-            echo "<td>!</td>";
-            echo "<td>!</td>";
+            echo "<td>".$total_guladarahsewaktu."</td>";
+            echo "<td>".$total_guladarahpuasa."</td>";
+            echo "<td>".$total_guladarah2jamp."</td>";
             echo "<td>".$total_kolesteroltotal."</td>";
             echo "<td>".$total_asamurat."</td>";
-            echo "<td>!</td>";
-            echo "<td>!</td>";
+            echo "<td></td>";
+            echo "<td></td>";
             echo "</tr>";
         }
         echo "<tr>";
