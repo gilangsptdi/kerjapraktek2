@@ -308,7 +308,7 @@ if (mysqli_num_rows($query) > 0) {
         <script src="../assets/js/script.js"></script>
         <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
     <script>
-    //    tes
+       
         new DataTable('#mytable');
 
         function printPage(url) {
