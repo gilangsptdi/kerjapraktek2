@@ -34,11 +34,17 @@ if (mysqli_num_rows($query) > 0) {
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/cetak.css">
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="//cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 </head>
 
 <body id="dashboard">
@@ -63,9 +69,10 @@ if (mysqli_num_rows($query) > 0) {
         </div>
 
         <hr>
-        <a href="../dashboard/" class="menu active">
+        <a href="../dashboard/" class="menu">
             <i class="bi bi-house"></i>
             <p>Home</p>
+
         </a>
         <a class="menu dropdown">
             <i class="bi bi-hospital"></i>
@@ -73,7 +80,7 @@ if (mysqli_num_rows($query) > 0) {
             <i class="bi bi-caret-down-fill "></i>
         </a>
         <div class="show">
-            <a href="../addpasien/" class="menu">
+            <a href="../addpasien/" class="menu ">
                 <i class="bi bi-person-fill-add"></i>
                 <p>Tambah Pasien</p>
             </a>
@@ -82,13 +89,14 @@ if (mysqli_num_rows($query) > 0) {
                 <p>Tambah Laporan Pasien</p>
             </a>
         </div>
+
         <a class="menu dropdown">
             <i class="bi bi-hospital"></i>
             <p>Hasil</p>
             <i class="bi bi-caret-down-fill "></i>
         </a>
-        <div class="show">
-            <a href="../datapasien/index.php" class="menu">
+        <div class="show aktif">
+            <a href="../datapasien/index.php" class="menu active">
                 <i class="bi bi-person-lines-fill"></i>
                 <p>Daftar Pasien</p>
             </a>
@@ -100,70 +108,30 @@ if (mysqli_num_rows($query) > 0) {
                 <i class="bi bi-person-fill-add"></i>
                 <p>Daftar Laporan Bulanan</p>
             </a>
-            <a href="../rekapitulasi/" class="menu">
-                <i class="bi bi-person-fill-add"></i>
-                <p>Rekapitulasi</p>
-            </a>
         </div>
         <a href="../actions/logout.php" class="menu">
             <i class="bi bi-box-arrow-left"></i>
             <p>Log Out</p>
         </a>
     </aside>
-
     <main id="home">
         <header>
             <nav>
                 <a href="../dashboard/" class="navbrand">
-                    <img src="../assets/img/puskesmas logo.png" alt="logo puskesmas">
-                    <h2>PUSKESMAS SINDANGKASIH</h2>
+                    <img src="../assets/img/puskesmas logo.png" alt="logo puskesmas" />
+                    <h2 class="judul">PUSKESMAS SINDANGKASIH</h2>
                 </a>
             </nav>
         </header>
-
-        <!-- Content -->
-        <div class="container">
-            <div class="card">
-                <h4>Total Pasien <a href="../datapasien/index.php" class="bi bi-people-fill"></a></h4>
-                <h1>
-                    <?php
-                    $sql = "SELECT * FROM data_pasien";
-                    $query = mysqli_query($conn, $sql);
-                    echo mysqli_num_rows($query);
-                    ?></h1>
-            </div>
-            <div class="card">
-                <h4>Total Laporan <a href="../datalaporan/index.php" class="bi bi-people-fill"></a></h4>
-                <h1><?php
-                    $tgl =  Date('Y-m-d');
-                    $sql = "SELECT * FROM laporan_lab";
-                    $query = mysqli_query($conn, $sql);
-                    echo mysqli_num_rows($query);
-                    ?></h1>
-            </div>
-            <div class="card">
-                <h4>Total Pasien Harian <i class="bi bi-people-fill"></i></h4>
-                <h1><?php
-                    $sql = "SELECT * FROM data_pasien";
-                    $query = mysqli_query($conn, $sql);
-                    echo mysqli_num_rows($query);
-                    ?></h1>
-            </div>
-            <div class="card">
-                <h4>Total Laporan Harian <i class="bi bi-people-fill"></i></h4>
-                <h1>
-                    <?php
-                    $tgl =  Date('Y-m-d');
-                    $sql = "SELECT * FROM laporan_lab WHERE tanggal='$tgl'";
-                    $query = mysqli_query($conn, $sql);
-                    echo mysqli_num_rows($query);
-                    ?></h1>
-            </div>
+        <div class="formlap-container">
+            <h2 class="lab">HASIL LAPORAN BULANAN</h2>
+            <form action="./cetak.php" method="GET">
+                <p>Pilih Bulan
+                <input type="month" name="bulan" id="bulan" value="<?php echo (isset($_GET["bulan"]))? $_GET['bulan']:''?>">
+                <button type="submit" style="padding:4px; margin-left:8px"><i class="bi bi-search"></i></button>
+                </p>
+            </form>
+            <!-- <button onclick="printPage('tes.html')">Cetak</button> -->
         </div>
-        <!-- Content -->
-    </main>
 
-    <script src="../assets/js/script.js"></script>
 </body>
-
-</html>
