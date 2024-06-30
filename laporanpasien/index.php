@@ -128,7 +128,11 @@ if (mysqli_num_rows($query) > 0) {
                 <button type="submit" class="cari">Cari</button>
                 <?php
                 include('../include/config.php');
-                $date = isset($_GET['date']) ? $_GET['date'] : date('Y-m');
+                if (isset($_GET['date'])){
+                    $date = ($_GET['date']=='') ? $date = date('Y-m') : $_GET['date'];
+                }else{
+                    $date = date('Y-m');
+                }
                 list($year, $month) = explode('-', $date);
                 $sql = "SELECT tanggal, 
                     COUNT(*) AS total_records, 
@@ -203,7 +207,11 @@ if (mysqli_num_rows($query) > 0) {
                 <tbody>
                     <?php
                     include('../include/config.php');
-                    $date = isset($_GET['date']) ? $_GET['date'] : date('Y-m');
+                    if (isset($_GET['date'])){
+                        $date = ($_GET['date']=='') ? $date = date('Y-m') : $_GET['date'];
+                    }else{
+                        $date = date('Y-m');
+                    }
                     list($year, $month) = explode('-', $date);
                     $sql = "SELECT tanggal, 
                     COUNT(*) AS total_records, 
@@ -292,11 +300,11 @@ if (mysqli_num_rows($query) > 0) {
                         }
                     }
                     ?>
-
                 </tbody>
                 </thead>
             </table>
             <!-- <button onclick="printPage('tes.html')">Cetak</button> -->
         </div>
-
+        <script src="../assets/js/script.js"></script>
 </body>
+</html>
