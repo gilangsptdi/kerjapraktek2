@@ -170,7 +170,8 @@ if (!isset($_SESSION['kode_user'])) {
                             echo "</td>";
                             echo "<td>" . $data['no_registrasi'] . "</td>";
                             echo "<td>" . $data['tanggal'] . "</td>";
-                            echo "<td class='btn-center'><a class='cetak' href='./tes.php?kode=" . $data['kode_laporan'] . "'>Cetak</a>";
+                            echo "<td class='btn-center'><a class='cetak' href='./cetakbiasa.php?kode=" . $data['kode_laporan'] . "'>Cetak Biasa</a>";
+                            echo "<a class='cetak' href='./tes.php?kode=" . $data['kode_laporan'] . "'>Cetak Rinci</a>";
                             echo "<a class='hapus' href='../actions/hapus_laporan.php?kode=" . $data['kode_laporan'] . "'>Hapus</a></td>";
                             echo "</tr>";
                             $no++;

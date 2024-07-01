@@ -230,7 +230,7 @@
           <h5>UPTD</h5>
           <h5>PUSKESMAS SINDANGKASIH</h5>
           <div class="jalan">
-            Jl. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Jl. Raya Ancol 1 No. 79 Ciamis Telp. 0265 5303232 Jawa Barat 46268
           </div>
         </div>
       </div>
