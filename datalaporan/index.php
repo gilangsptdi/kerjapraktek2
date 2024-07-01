@@ -49,7 +49,6 @@ if (!isset($_SESSION['kode_user'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="//cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css" />
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>
@@ -116,6 +115,10 @@ if (!isset($_SESSION['kode_user'])) {
                 <i class="bi bi-person-fill-add"></i>
                 <p>Daftar Laporan Bulanan</p>
             </a>
+            <a href="../rekapitulasi/" class="menu">
+                <i class="bi bi-person-fill-add"></i>
+                <p>Rekapitulasi</p>
+            </a>
         </div>
         <a href="../actions/logout.php" class="menu">
             <i class="bi bi-box-arrow-left"></i>
@@ -139,9 +142,9 @@ if (!isset($_SESSION['kode_user'])) {
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Kode Laporan</th>
-                        <th>No. Registrasi</th>
                         <th>Nama</th>
+                        <th>No. Registrasi</th>
+                        <th>Tanggal</th>
                         <th>Aksi</th>
                     </tr>
                 <tbody>
@@ -156,8 +159,6 @@ if (!isset($_SESSION['kode_user'])) {
                         while ($data = mysqli_fetch_array($query)) {
                             echo "<tr>";
                             echo "<th>" . $no . "</th>";
-                            echo "<td>" . $data['kode_laporan'] . "</td>";
-                            echo "<td>" . $data['no_registrasi'] . "</td>";
                             echo "<td>";
                             $sql2 = "SELECT nama FROM data_pasien WHERE no_registrasi='" . $data['no_registrasi'] . "'";
                             $query2 = mysqli_query($conn, $sql2);
@@ -167,6 +168,8 @@ if (!isset($_SESSION['kode_user'])) {
                                 }
                             }
                             echo "</td>";
+                            echo "<td>" . $data['no_registrasi'] . "</td>";
+                            echo "<td>" . $data['tanggal'] . "</td>";
                             echo "<td class='btn-center'><a class='cetak' href='./tes.php?kode=" . $data['kode_laporan'] . "'>Cetak</a>";
                             echo "<a class='hapus' href='../actions/hapus_laporan.php?kode=" . $data['kode_laporan'] . "'>Hapus</a></td>";
                             echo "</tr>";

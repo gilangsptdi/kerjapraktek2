@@ -95,9 +95,13 @@ if (mysqli_num_rows($query) > 0) {
                 <i class="bi bi-person-lines-fill"></i>
                 <p>Daftar Pasien</p>
             </a>
-            <a href="" class="menu">
+            <a href="../laporanpasien/" class="menu">
                 <i class="bi bi-person-fill-add"></i>
                 <p>Daftar Laporan</p>
+            </a>
+            <a href="../rekapitulasi/" class="menu">
+                <i class="bi bi-person-fill-add"></i>
+                <p>Rekapitulasi</p>
             </a>
         </div>
 

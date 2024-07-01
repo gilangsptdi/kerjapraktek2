@@ -88,7 +88,7 @@ if (mysqli_num_rows($query) > 0) {
             <i class="bi bi-caret-down-fill "></i>
         </a>
         <div class="show">
-            <a href="../datapasien/index.php" class="menu">
+            <a href="../datapasien/" class="menu">
                 <i class="bi bi-person-lines-fill"></i>
                 <p>Daftar Pasien</p>
             </a>
@@ -96,7 +96,7 @@ if (mysqli_num_rows($query) > 0) {
                 <i class="bi bi-person-fill-add"></i>
                 <p>Daftar Laporan</p>
             </a>
-            <a href="../laporanpasien/index.php" class="menu">
+            <a href="../laporanpasien/" class="menu">
                 <i class="bi bi-person-fill-add"></i>
                 <p>Daftar Laporan Bulanan</p>
             </a>

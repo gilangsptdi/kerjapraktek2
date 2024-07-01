@@ -96,7 +96,7 @@ if (mysqli_num_rows($query) > 0) {
             <i class="bi bi-caret-down-fill "></i>
         </a>
         <div class="show aktif">
-            <a href="../datapasien/index.php" class="menu active">
+            <a href="../datapasien/index.php" class="menu">
                 <i class="bi bi-person-lines-fill"></i>
                 <p>Daftar Pasien</p>
             </a>
@@ -107,6 +107,10 @@ if (mysqli_num_rows($query) > 0) {
             <a href="../laporanpasien/index.php" class="menu">
                 <i class="bi bi-person-fill-add"></i>
                 <p>Daftar Laporan Bulanan</p>
+            </a>
+            <a href="../rekapitulasi/" class="menu active">
+                <i class="bi bi-person-fill-add"></i>
+                <p>Rekapitulasi</p>
             </a>
         </div>
         <a href="../actions/logout.php" class="menu">
@@ -124,7 +128,7 @@ if (mysqli_num_rows($query) > 0) {
             </nav>
         </header>
         <div class="formlap-container">
-            <h2 class="lab">HASIL LAPORAN BULANAN</h2>
+            <h2 class="lab">REKAPITULASI</h2>
             <form action="./cetak.php" method="GET">
                 <p>Pilih Bulan
                 <input type="month" name="bulan" id="bulan" value="<?php echo (isset($_GET["bulan"]))? $_GET['bulan']:''?>">

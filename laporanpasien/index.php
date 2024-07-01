@@ -106,6 +106,10 @@ if (mysqli_num_rows($query) > 0) {
                 <i class="bi bi-person-fill-add"></i>
                 <p>Daftar Laporan Bulanan</p>
             </a>
+            <a href="../rekapitulasi/" class="menu">
+                <i class="bi bi-person-fill-add"></i>
+                <p>Rekapitulasi</p>
+            </a>
         </div>
         <a href="../actions/logout.php" class="menu">
             <i class="bi bi-box-arrow-left"></i>

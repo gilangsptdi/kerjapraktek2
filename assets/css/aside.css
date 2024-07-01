@@ -12,6 +12,8 @@ aside {
     z-index: 9;
 }
 
+
+
 .menu {
     width: 100%;
     display: flex;
@@ -22,6 +24,7 @@ aside {
     text-decoration: none;
     color: white;
     justify-content: center;
+    cursor: pointer;
 }
 
 aside nav {
