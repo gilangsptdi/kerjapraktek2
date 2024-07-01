@@ -1,29 +1,29 @@
 <?php
 include('../include/config.php');
 $sql = "SELECT 
-    COUNT(DISTINCT CASE WHEN hemoglobin IS NOT NULL THEN no_registrasi END) AS total_hemoglobin,
-    COUNT(DISTINCT CASE WHEN led IS NOT NULL THEN no_registrasi END) AS total_led,
-    COUNT(DISTINCT CASE WHEN golongandarah IS NOT NULL THEN no_registrasi END) AS total_golongandarah,
-    COUNT(DISTINCT CASE WHEN (warna IS NOT NULL OR kejernihan IS NOT NULL OR ph IS NOT NULL OR beratjenis IS NOT NULL OR protein IS NOT NULL OR glukosa IS NOT NULL OR bilirubin IS NOT NULL OR urobilinogen IS NOT NULL OR keton IS NOT NULL OR nitrit IS NOT NULL OR leukosittt IS NOT NULL OR eritrosittt IS NOT NULL OR epitel IS NOT NULL OR kristal IS NOT NULL OR silinder IS NOT NULL) THEN no_registrasi END) AS total_urin_lengkap,
-    COUNT(DISTINCT CASE WHEN protein IS NOT NULL THEN no_registrasi END) AS total_protein,
-    COUNT(DISTINCT CASE WHEN teskehamilan IS NOT NULL THEN no_registrasi END) AS total_teskehamilan,
-    COUNT(DISTINCT CASE WHEN antihiv IS NOT NULL THEN no_registrasi END) AS total_antihiv,
-    COUNT(DISTINCT CASE WHEN sifilistprapid IS NOT NULL THEN no_registrasi END) AS total_sifilistprapid,
-    COUNT(DISTINCT CASE WHEN hbsag IS NOT NULL THEN no_registrasi END) AS total_hbsag,
-    COUNT(DISTINCT CASE WHEN antihivr2 IS NOT NULL THEN no_registrasi END) AS total_antihivr2,
-    COUNT(DISTINCT CASE WHEN antihivr3 IS NOT NULL THEN no_registrasi END) AS total_antihivr3,
-    COUNT(DISTINCT CASE WHEN (styphio IS NOT NULL OR sparatyphiao IS NOT NULL OR sparatyphibo IS NOT NULL OR sparatyphico IS NOT NULL OR styphih IS NOT NULL OR sparatyphiah IS NOT NULL OR sparatyphibh IS NOT NULL OR sparatyphich IS NOT NULL) THEN no_registrasi END) AS total_widal,
-    COUNT(DISTINCT CASE WHEN ns1dbd IS NOT NULL THEN no_registrasi END) AS total_ns1dbd,
-    COUNT(DISTINCT CASE WHEN iggdbd IS NOT NULL THEN no_registrasi END) AS total_iggdbd,
-    COUNT(DISTINCT CASE WHEN igmdbd IS NOT NULL THEN no_registrasi END) AS total_igmdbd,
-    COUNT(DISTINCT CASE WHEN guladarahsewaktu IS NOT NULL THEN no_registrasi END) AS total_guladarahsewaktu,
-    COUNT(DISTINCT CASE WHEN guladarahpuasa IS NOT NULL THEN no_registrasi END) AS total_guladarahpuasa,
-    COUNT(DISTINCT CASE WHEN guladarah2jamp IS NOT NULL THEN no_registrasi END) AS total_guladarah2jamp,
-    COUNT(DISTINCT CASE WHEN kolesteroltotal IS NOT NULL THEN no_registrasi END) AS total_kolesteroltotal,
-    COUNT(DISTINCT CASE WHEN asamurat IS NOT NULL THEN no_registrasi END) AS total_asamurat,
-    COUNT(DISTINCT CASE WHEN pagi IS NOT NULL OR sewaktu IS NOT NULL THEN no_registrasi END) AS total_bta
-    -- COUNT(DISTINCT CASE WHEN trigliserida IS NOT NULL THEN no_registrasi END) AS total_trigliserida,
-    -- COUNT(DISTINCT CASE WHEN hdl IS NOT NULL THEN no_registrasi END) AS total_hdl
+    COUNT(DISTINCT CASE WHEN hemoglobin !='' THEN no_registrasi END) AS total_hemoglobin,
+    COUNT(DISTINCT CASE WHEN led !='' THEN no_registrasi END) AS total_led,
+    COUNT(DISTINCT CASE WHEN golongandarah !='' THEN no_registrasi END) AS total_golongandarah,
+    COUNT(DISTINCT CASE WHEN (warna !='' OR kejernihan !='' OR ph !='' OR beratjenis !='' OR protein !='' OR glukosa !='' OR bilirubin !='' OR urobilinogen !='' OR keton !='' OR nitrit !='' OR leukosittt !='' OR eritrosittt !='' OR epitel !='' OR kristal !='' OR silinder !='') THEN no_registrasi END) AS total_urin_lengkap,
+    COUNT(DISTINCT CASE WHEN protein !='' THEN no_registrasi END) AS total_protein,
+    COUNT(DISTINCT CASE WHEN teskehamilan !='' THEN no_registrasi END) AS total_teskehamilan,
+    COUNT(DISTINCT CASE WHEN antihiv !='' THEN no_registrasi END) AS total_antihiv,
+    COUNT(DISTINCT CASE WHEN sifilistprapid !='' THEN no_registrasi END) AS total_sifilistprapid,
+    COUNT(DISTINCT CASE WHEN hbsag !='' THEN no_registrasi END) AS total_hbsag,
+    COUNT(DISTINCT CASE WHEN antihivr2 !='' THEN no_registrasi END) AS total_antihivr2,
+    COUNT(DISTINCT CASE WHEN antihivr3 !='' THEN no_registrasi END) AS total_antihivr3,
+    COUNT(DISTINCT CASE WHEN (styphio !='' OR sparatyphiao !='' OR sparatyphibo !='' OR sparatyphico !='' OR styphih !='' OR sparatyphiah !='' OR sparatyphibh !='' OR sparatyphich !='') THEN no_registrasi END) AS total_widal,
+    COUNT(DISTINCT CASE WHEN ns1dbd !='' THEN no_registrasi END) AS total_ns1dbd,
+    COUNT(DISTINCT CASE WHEN iggdbd !='' THEN no_registrasi END) AS total_iggdbd,
+    COUNT(DISTINCT CASE WHEN igmdbd !='' THEN no_registrasi END) AS total_igmdbd,
+    COUNT(DISTINCT CASE WHEN guladarahsewaktu !='' THEN no_registrasi END) AS total_guladarahsewaktu,
+    COUNT(DISTINCT CASE WHEN guladarahpuasa !='' THEN no_registrasi END) AS total_guladarahpuasa,
+    COUNT(DISTINCT CASE WHEN guladarah2jamp !='' THEN no_registrasi END) AS total_guladarah2jamp,
+    COUNT(DISTINCT CASE WHEN kolesteroltotal !='' THEN no_registrasi END) AS total_kolesteroltotal,
+    COUNT(DISTINCT CASE WHEN asamurat !='' THEN no_registrasi END) AS total_asamurat,
+    COUNT(DISTINCT CASE WHEN pagi !='' OR sewaktu !='' THEN no_registrasi END) AS total_bta
+    -- COUNT(DISTINCT CASE WHEN trigliserida !='' THEN no_registrasi END) AS total_trigliserida,
+    -- COUNT(DISTINCT CASE WHEN hdl !='' THEN no_registrasi END) AS total_hdl
 FROM laporan_lab
 WHERE tanggal = '$tgl';";
 

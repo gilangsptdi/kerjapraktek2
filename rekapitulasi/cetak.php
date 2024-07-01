@@ -139,7 +139,7 @@
         $jumlah_guladarah2jamp = 0;
         $jumlah_kolesteroltotal = 0;
         $jumlah_asamurat = 0;
-
+        $jmlKolom =0;
         for ($day = 1; $day <= $daysInMonth; $day++) {
             $date = DateTime::createFromFormat('Y-m-d', "$year-$month-$day");
             $tgl = $_GET['bulan']."-".$date->format('d');
@@ -170,6 +170,7 @@
             ];
             
             $jumlah_total = 0;
+            
             
             foreach ($totals as $total) {
                 if ($total != '') {
@@ -226,29 +227,11 @@
             $jumlah_guladarah2jamp += ($total_guladarah2jamp != '') ? $total_guladarah2jamp : 0;
             $jumlah_kolesteroltotal += ($total_kolesteroltotal != '') ? $total_kolesteroltotal : 0;
             $jumlah_asamurat += ($total_asamurat != '') ? $total_asamurat : 0;
+            $jmlKolom += $jumlah_total;
         }
-        $jmlBaris = $jumlah_hemoglobin +
-            $jumlah_led +
-            $jumlah_golongandarah +
-            $jumlah_urin_lengkap +
-            $jumlah_protein +
-            $jumlah_teskehamilan +
-            $jumlah_bta +
-            $jumlah_antihiv +
-            $jumlah_sifilistprapid +
-            $jumlah_hbsag +
-            $jumlah_antihivr2 +
-            $jumlah_antihivr3 +
-            $jumlah_widal +
-            $jumlah_ns1dbd +
-            $jumlah_igmdbd +
-            $jumlah_iggdbd +
-            $jumlah_guladarahsewaktu +
-            $jumlah_guladarahpuasa +
-            $jumlah_guladarah2jamp +
-            $jumlah_kolesteroltotal +
-            $jumlah_asamurat;
+        $jmlBaris = $jumlah_hemoglobin + $jumlah_led + $jumlah_golongandarah + $jumlah_urin_lengkap + $jumlah_protein + $jumlah_teskehamilan + $jumlah_bta + $jumlah_antihiv + $jumlah_sifilistprapid + $jumlah_hbsag + $jumlah_antihivr2 + $jumlah_antihivr3 + $jumlah_widal + $jumlah_ns1dbd + $jumlah_igmdbd + $jumlah_iggdbd + $jumlah_guladarahsewaktu + $jumlah_guladarahpuasa + $jumlah_guladarah2jamp + $jumlah_kolesteroltotal + $jumlah_asamurat;
 
+        $jml_total = $jmlBaris + $jmlKolom;
         echo "<tr>";
         echo "<th style='text-align:center'>Jumlah</th>";
         echo "<td>".$jumlah_hemoglobin."</td>";
@@ -276,7 +259,7 @@
         echo "<td>".$jumlah_asamurat."</td>";
         echo "<td></td>";
         echo "<td></td>";
-        echo "<td></td>";
+        echo "<td>".$jml_total."</td>";
         echo "</tr>";
         ?>
         </tbody>
